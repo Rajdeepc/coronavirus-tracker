@@ -1,0 +1,44 @@
+.typeList{
+    max-height: 500px;
+    overflow-y: auto;
+    height: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.numberCoronaStyle{
+    font-size: 30px;
+    margin: 0;
+}
+.typeList p {
+    text-align: left;
+}
+.card{
+    border: 0px;
+}
+.box-grid{
+    float:left;
+    width: 33.333%;
+    text-align: left;
+  
+}
+.box-grid .list-group-item{background: transparent;    border-radius: 0;
+}
+.box-grid .card-body{
+    padding:0px
+}
+.box-grid .list-group{
+    height: calc(90vh - 100px);
+    overflow-y:auto;
+}
+.confirmedStyle{
+    color: red;
+    font-weight: bold;
+}
+.recoveredStyle{
+    color: green;
+    font-weight: bold;
+}
+.deathStyle{
+    color: #000;
+    font-weight: bold;
+}
