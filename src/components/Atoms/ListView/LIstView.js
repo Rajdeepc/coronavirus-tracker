@@ -7,9 +7,10 @@ const CoronaStatusListView = ({ data, coronaItemType }) => {
     <Card.Body>
       <ListGroup>
         {data.length > 0
-          ? data.map(item => {
+          ? data.map((item,index) => {
               return (
                 <CoronaNumberLabel
+                  key={index}
                   item={item}
                   coronaItemType={coronaItemType}
                 />

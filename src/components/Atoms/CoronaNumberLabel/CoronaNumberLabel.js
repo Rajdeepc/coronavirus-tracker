@@ -5,6 +5,7 @@ import PropTypes from 'prop-types'; // ES6
 
 
 const CoronaNumberLabel = ({item , coronaItemType}) => {
+    console.log(typeof item)
     return (
         <ListGroup.Item>
             <span className={coronaItemType === 'confirmed' ? 'confirmedStyle' : coronaItemType === 'recovered' ? 'recoveredStyle' : 'deathStyle'}>{coronaItemType === 'confirmed' ? item.confirmed : coronaItemType === 'recovered' ? item.recovered : item.deaths}</span> <span>{item.provinceState} {item.countryRegion}</span>
@@ -13,7 +14,13 @@ const CoronaNumberLabel = ({item , coronaItemType}) => {
 }
 
 CoronaNumberLabel.propTypes = {
-    item: PropTypes.objectOf,
+    item: PropTypes.shape({
+        confirmed: PropTypes.number,
+        recovered: PropTypes.number,
+        deaths: PropTypes.number,
+        provinceState: PropTypes.string,
+        countryRegion: PropTypes.string
+    }),
     coronaItemType:PropTypes.string.isRequired
 }
 

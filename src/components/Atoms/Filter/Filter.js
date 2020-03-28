@@ -7,6 +7,8 @@ const FilterCoronaByState = ({ countryList }) => {
   const [selectedCountry, setSelectedCountry] = useState("Albania");
   const [coronaByState, setCoronaByState] = useState([]);
 
+  console.log(countryList);
+
   useEffect(() => {
     if (selectedCountry) {
       (async () => {
@@ -66,7 +68,7 @@ const FilterCoronaByState = ({ countryList }) => {
           {coronaByState.length > 0
             ? coronaByState.map(item => {
               return (
-                <tr>
+                <tr key={item.countryRegion}>
                   <td>{item.provinceState}</td>
                   <td>{item.confirmed}</td>
                   <td>{item.active}</td>
@@ -86,7 +88,11 @@ const FilterCoronaByState = ({ countryList }) => {
 
 
 FilterCoronaByState.propTypes = {
-  countryList: PropTypes.arrayOf
+  countryList: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string,
+    iso2: PropTypes.string,
+    iso3: PropTypes.string,
+  })).isRequired
 }
 
 FilterCoronaByState.defaultProps = {
